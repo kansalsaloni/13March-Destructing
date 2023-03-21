@@ -1,0 +1,107 @@
+Count the occurences
+
+function countWords(inputString) {
+ 
+  const words = inputString.split(" ");
+
+ 
+  const wordCounts = new Map();
+
+  for (let i = 0; i < words.length; i++) {
+    const word = words[i];
+
+   
+    if (wordCounts.has(word)) {
+      const count = wordCounts.get(word);
+      wordCounts.set(word, count + 1);
+    }
+    
+    else {
+      wordCounts.set(word, 1);
+    }
+  }
+  return wordCounts;
+}
+
+const inputString = prompt("enter string");
+const wordCounts = countWords(inputString);
+console.log(wordCounts);
+
+#######################################################################
+
+2 Only unique item are allowed
+
+function removeduplicate(input){
+     return [...new Set(arr)];
+}
+
+
+
+const input =[1,1,2,3,4,5,2,7];
+const val=removeduplicate(input);
+console.log(val);
+
+#######################################################################
+
+3  Swap the values.
+function swap(x,y){
+      [x, y] = [y, x];
+       return { x, y };
+}
+
+
+const val=swap(1,2);
+console.log(val);
+
+#######################################################################
+
+4 Access random elements
+function ele(arr){
+      const [first, second, ...rest] = arr;
+       const last = rest.pop();
+       return[first,second,last];
+}
+
+const val=ele(1,2,3,4,5);
+console.log(val);
+
+#######################################################################
+
+5  Min and max values
+
+function findMaxMin(arr) {
+ 
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+
+  
+  return { max, min };
+}
+
+const arr = [5, 2, 7, 1, 9];
+const result = findMaxMin(arr);
+console.log(result);
+
+#######################################################################
+
+6 Nested Objects
+
+function extractNameAndStreet(person) {
+ 
+  const { name, address: { street } } = person;
+  
+ 
+  return { name, street };
+}
+const person = {
+  name: "John",
+  address: {
+    street: "123 Main St",
+    city: "Anytown",
+    state: "CA",
+    zip: "12345"
+  }
+};
+
+const result = extractNameAndStreet(person);
+console.log(result);
